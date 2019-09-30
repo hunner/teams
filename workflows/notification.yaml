@@ -7,5 +7,5 @@ steps:
   spec:
     message: "Você recebeu uma notificação do Projeto Nebula!"
     webhookURL:
-      $type: teste
+      $type: Secret
       name: msteams_webhook_url
