@@ -1,6 +1,3 @@
-version: v1
-description: Deploy Teste Mensagem - Teams
-
 steps:
 - name: msteams-notification
   image: projectnebula/msteams-notification:latest
