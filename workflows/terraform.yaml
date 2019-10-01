@@ -1,0 +1,24 @@
+version: v1
+description: Initiating the deployment
+
+steps:
+- name: terraform
+  image: projectnebula/terraform:latest
+  spec:
+    provider: gcp
+    credentials:
+      credentials.json: 
+        $type: Secret
+        name: credentials
+    workspace: my_workspace
+    directory: infra/app    
+    git: 
+      ssh_key:
+        $type: Secret
+        name: ssh_key
+      known_hosts:
+        $type: Secret
+        name: known_hosts
+      name: my-git-repo
+      branch: dev
+      repository: path/to/your/repo
