@@ -12,7 +12,9 @@ steps:
 - name: msteams-notification
   image: projectnebula/msteams-notification:latest
   spec:
-    message: "Você recebeu uma notificação do Projeto Nebula!"
+    message: 
+      $type: Secret
+      name: json
     webhookURL:
       $type: Secret
       name: secret_url
