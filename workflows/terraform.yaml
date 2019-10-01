@@ -1,8 +1,7 @@
-steps:
-
 version: v1
 description: Initiating the deployment
 
+steps:
 - name: terraform
   image: projectnebula/terraform:latest
   spec:
