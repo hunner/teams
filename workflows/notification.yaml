@@ -2,6 +2,13 @@ version: v1
 description: Nebula MSteams notification Workflow
 
 steps:
+- name: echo
+  image: alpine:latest
+  input:
+  - echo "Hello world. I am $(whoami)"
+  - cat /nebula/spec.json
+  spec:
+    hello: world
 - name: msteams-notification
   image: projectnebula/msteams-notification:latest
   spec:
@@ -9,3 +16,5 @@ steps:
     webhookURL:
       $type: Secret
       name: secret_url
+  dependsOn:
+    - echo
