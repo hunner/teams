@@ -1,0 +1,20 @@
+steps:
+- name: jenkins
+  image: projectnebula/jenkins-job-runner:latest
+  spec:
+    masterURL: http://dev-001:8080/
+    credentials: 
+      method: http
+      user: my-username
+      token: 
+        $type: Secret
+        name: token
+    job: my-jenkins-job
+    parameters: 
+      HOST: web2
+      VERSION: 287
+      DB_UPDATE: true
+    queueOptions:
+      waitFor: downstreams
+      timeoutSeconds: 5000
+      cancelOnTimeout: false
