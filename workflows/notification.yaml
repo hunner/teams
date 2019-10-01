@@ -1,3 +1,6 @@
+version: v1
+description: Nebula MSteams notification Workflow
+
 steps:
 - name: msteams-notification
   image: projectnebula/msteams-notification:latest
