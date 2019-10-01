@@ -1,21 +1,19 @@
 steps:
+
+version: v1
+description: Initiating the deployment
+
 - name: terraform
   image: projectnebula/terraform:latest
   spec:
-    provider: gcp
+    provider: aws
     credentials:
-      credentials.json: 
+      credentials: 
         $type: Secret
         name: credentials
-    workspace: my_workspace
+    workspace: aws-ec2
     directory: infra/app    
-    git: 
-      ssh_key:
-        $type: Secret
-        name: ssh_key
-      known_hosts:
-        $type: Secret
-        name: known_hosts
+    git:
       name: my-git-repo
-      branch: dev
-      repository: path/to/your/repo
+      branch: master
+      repository: https://github.com/Felipenho/teams.git
