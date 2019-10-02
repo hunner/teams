@@ -10,7 +10,7 @@ steps:
   spec:
     hello: world
 - name: msteams-notification
-  image: projectnebula/msteams-notification:latest
+  image: projectnebula/msteams-notification:7bc90d8
   spec:
     message: "Você recebeu uma notificação do Projeto Nebula!"
     webhookURL: "https://outlook.office.com/webhook/e4cb2a4d-f093-4fd5-8267-d53c78bbfa85@6c8b295f-6668-449d-878a-11cc33c0a93f/IncomingWebhook/e5118da509684a07b14d6ebe69b8665e/3d5e0822-3661-4bc5-a02a-f5180483c695"
